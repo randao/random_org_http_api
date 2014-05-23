@@ -70,7 +70,7 @@ More information about available parameters on [http://www.random.org/clients/ht
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/random_org_http_api/fork )
+1. Fork it ( https://github.com/istickz/random_org_http_api/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
