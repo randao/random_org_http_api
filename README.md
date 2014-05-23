@@ -19,6 +19,7 @@ Or install it yourself as:
 ## Usage
 
     require 'random_org_http_api'
+    
     g = RandomOrgHttpApi::Generator.new
 
     g.generate_integers(num: 4, max: 100)
@@ -29,6 +30,34 @@ Or install it yourself as:
 
     g.generate_sequence(num: 5, len: 10, max: 10)
     => ["8", "9", "10", "3", "2", "7", "1", "5", "4", "6"
+
+## More available parameters for generate_* methods
+
+### generate_integers
+
+    :min
+    :col
+    :base
+    :format
+    :rnd
+
+
+### generate_sequence
+
+    :col
+    :format
+    :rnd
+
+### generate_strings
+
+    :digits
+    :upperalpha
+    :loweralpha
+    :unique
+    :format
+    :rnd
+
+More information about available parameters on [http://www.random.org/clients/http/](http://www.random.org/clients/http/)
 
 ## Contributing
 
