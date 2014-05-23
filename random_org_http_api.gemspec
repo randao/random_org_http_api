@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = RandomOrgHttpApi::VERSION
   spec.authors       = ["Temur Fatkulin"]
   spec.email         = ["temur.fatkulin@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Realization of old HTTP API provided by the random.org service}
+  spec.description   = %q{At present realized generation for numbers, strings and sequences}
+  spec.homepage      = "https://github.com/istickz/random_org_http_api"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
