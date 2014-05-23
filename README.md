@@ -1,4 +1,5 @@
 # RandomOrgHttpApi
+[![Gem Version](https://badge.fury.io/rb/random_org_http_api@2x.png)](http://badge.fury.io/rb/random_org_http_api)
 
 Realization of old [HTTP API](http://www.random.org/clients/http/) provided by the random.org service.  
 Not to confuse to new [JSON-RPC API](https://api.random.org/json-rpc/1/) which now is in beta release.
