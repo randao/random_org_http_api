@@ -1,6 +1,14 @@
 # RandomOrgHttpApi
 
-TODO: Write a gem description
+Realization of old [HTTP API](http://www.random.org/clients/http/) provided by the random.org service.  
+Not to confuse to new [JSON-RPC API](https://api.random.org/json-rpc/1/) which now is in beta release.
+
+At present realized:  
+
+* generation of numbers
+* generation of numbers
+* generation of numbers
+
 
 ## Installation
 
@@ -29,7 +37,7 @@ Or install it yourself as:
     => ["XxH06", "3UHOu", "Asjd0"]
 
     g.generate_sequence(num: 5, len: 10, max: 10)
-    => ["8", "9", "10", "3", "2", "7", "1", "5", "4", "6"
+    => ["8", "9", "10", "3", "2", "7", "1", "5", "4", "6"]
 
 ## More available parameters for generate_* methods
 
