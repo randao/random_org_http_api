@@ -5,9 +5,9 @@ Not to confuse to new [JSON-RPC API](https://api.random.org/json-rpc/1/) which n
 
 At present realized:  
 
-* generation of numbers
-* generation of numbers
-* generation of numbers
+* numbers generation
+* strings generation
+* sequence generation
 
 
 ## Installation
