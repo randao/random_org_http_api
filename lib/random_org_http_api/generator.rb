@@ -31,8 +31,11 @@ module RandomOrgHttpApi
           all_params = permit_params(DEFAULT_QUERY_PARAMS, params,  SEQUENCE_QUERY_PARAMS)
           query  = generate_query(all_params, SEQUENCE_QUERY_TEMPLATE)
       end
-      # Создаем запрос и возвращаем ответ.
-      Net::HTTP.get(DOMAIN, query).split
+      # Создаем запрос
+      res = Net::HTTP.get_response(DOMAIN, query)
+      # Если все хорошо, то возвращаем форматированный ответ,
+      # если нет, то показываем ответ ошибки сервера.
+      res.is_a?(Net::HTTPSuccess) ? res.body.split : res.body.strip
     end
 
     # Метод оставляющий только нужные параметры.
