@@ -18,6 +18,12 @@ module RandomOrgHttpApi
       request(DOMAIN, sequence_query)
     end
 
+    # Quota Checker
+    def quota
+      quota_query = "/quota/?ip=#{ip}&format=plain"
+      request(DOMAIN, quota_query).first.to_i
+    end
+
     private
 
     # Метод запроса на сайт random.org
@@ -56,6 +62,11 @@ module RandomOrgHttpApi
     # Параметры должны передаваться в хеше
     def insert_params(params, template)
       template % params
+    end
+
+    def ip
+      uri = URI('http://whatismyip.akamai.com')
+      Net::HTTP.get(uri)
     end
 
   end
