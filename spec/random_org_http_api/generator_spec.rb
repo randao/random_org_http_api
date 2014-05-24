@@ -47,7 +47,7 @@ describe RandomOrgHttpApi::Generator do
   describe '#request' do
     domain = 'www.random.org'
 
-    it 'should do string with error message if request have bad response' do
+    it 'should do return string with error message if request have bad response' do
       bad_query = '/strings/?num=HelloWorld&len=5&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new'
       expect(@generator.send(:request, domain, bad_query).class).to eq(String)
     end
