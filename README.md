@@ -40,6 +40,13 @@ Or install it yourself as:
     g.generate_sequence(num: 5, len: 10, max: 10)
     => ["8", "9", "10", "3", "2", "7", "1", "5", "4", "6"]
 
+Check your quota  
+
+    g.quota
+    => ["1000000"]
+    
+More information about quota [here](http://www.random.org/clients/http/)
+
 ## More available parameters for generate_* methods
 
 ### generate_integers
