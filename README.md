@@ -1,5 +1,6 @@
 # RandomOrgHttpApi
 [![Gem Version](https://badge.fury.io/rb/random_org_http_api.svg)](http://badge.fury.io/rb/random_org_http_api)
+[![Code Climate](https://codeclimate.com/github/istickz/random_org_http_api.png)](https://codeclimate.com/github/istickz/random_org_http_api)  
 
 Realization of old [HTTP API](http://www.random.org/clients/http/) provided by the random.org service.  
 Not to confuse to new [JSON-RPC API](https://api.random.org/json-rpc/1/) which now is in beta release.
