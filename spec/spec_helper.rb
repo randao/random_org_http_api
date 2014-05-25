@@ -1,10 +1,12 @@
 require 'simplecov'
+require 'coveralls'
 require 'codeclimate-test-reporter'
 ENV['CODECLIMATE_REPO_TOKEN'] = "0752eb729c8348842c8b66cfd1879d03bb0861acce90c923435015a40ec617a2"
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
     SimpleCov::Formatter::HTMLFormatter,
-    CodeClimate::TestReporter::Formatter
+    CodeClimate::TestReporter::Formatter,
+    Coveralls::SimpleCov::Formatter
 ]
 SimpleCov.start
 
