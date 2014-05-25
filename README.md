@@ -1,6 +1,6 @@
 # RandomOrgHttpApi
-[![Gem Version](https://badge.fury.io/rb/random_org_http_api.svg)](http://badge.fury.io/rb/random_org_http_api)
-[![Code Climate](https://codeclimate.com/github/istickz/random_org_http_api.png)](https://codeclimate.com/github/istickz/random_org_http_api)  
+[![Gem Version](https://badge.fury.io/rb/random_org_http_api.png)](http://badge.fury.io/rb/random_org_http_api)
+[![Code Climate](https://codeclimate.com/github/istickz/random_org_http_api.png)](https://codeclimate.com/github/istickz/random_org_http_api)
 [![Coverage Status](https://coveralls.io/repos/istickz/random_org_http_api/badge.png)](https://coveralls.io/r/istickz/random_org_http_api)  
 
 Realization of old [HTTP API](http://www.random.org/clients/http/) provided by the random.org service.  
