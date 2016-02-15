@@ -20,7 +20,7 @@ module RandomOrgHttpApi
 
     # Quota Checker
     def quota
-      quota_query = "/quota/?ip=#{ip}&format=plain"
+      quota_query = "quota/?ip=#{ip}&format=plain"
       request(DOMAIN, quota_query).first.to_i
     end
 
@@ -29,7 +29,10 @@ module RandomOrgHttpApi
     # Метод запроса на сайт random.org
     def request(domain, query)
       # Создаем запрос
-      res = Net::HTTP.get_response(domain, query)
+      uri = URI.join(domain, query)
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      res = http.get(uri.request_uri)
       # Если все хорошо, то возвращаем форматированный ответ,
       # если нет, то показываем ответ ошибки сервера.
       res.is_a?(Net::HTTPSuccess) ? res.body.split : res.body.strip
