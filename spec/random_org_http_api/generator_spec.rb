@@ -14,8 +14,10 @@ describe RandomOrgHttpApi::Generator do
   end
 
   describe '#query' do
+
   end
 
   describe '#request' do
+
   end
 end

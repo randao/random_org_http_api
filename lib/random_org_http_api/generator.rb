@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'net/http'
 
 module RandomOrgHttpApi
   class Generator
@@ -22,6 +21,10 @@ module RandomOrgHttpApi
       request(params).first.to_i
     end
 
+    def ip
+      request(uri: 'http://whatismyip.akamai.com').strip
+    end
+
     private
 
     def generate(type, params={})
@@ -29,11 +32,15 @@ module RandomOrgHttpApi
       request(params)
     end
 
-    def request(hash)
-      uri = URI(BASE_URI)
-      uri.path = hash[:path]
-      uri.query = URI.encode_www_form hash[:params]
-      open(uri).read.split
+    def api_request(hash)
+      request(uri: URI(BASE_URI), path: hash[:path], query: hash[:params]).split
+    end
+
+    def request(params)
+      uri = URI params[:uri]
+      uri.path = params[:path] if params[:path]
+      uri.query = URI.encode_www_form(params[:query]) if params[:query]
+      open(uri).read
     end
 
 
@@ -49,11 +56,6 @@ module RandomOrgHttpApi
 
     def permit_params(params, required_keys)
       params.select { |k| required_keys.include?(k) }
-    end
-
-    def ip
-      uri = URI('http://whatismyip.akamai.com')
-      open(uri).read.strip
     end
   end
 end
