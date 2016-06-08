@@ -17,7 +17,7 @@ At present realized:
 
 Add this line to your application's Gemfile:
 
-    gem 'random_org_http_api', github: 'istickz/random_org_http_api', branch: 'dev'
+    gem 'random_org_http_api'
 
 And then execute:
 
