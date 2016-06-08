@@ -1,6 +1,6 @@
 module RandomOrgHttpApi
   module Configuration
-    BASE_URI = 'https://www.random.org'
+    BASE_URI = 'https://www.random.org'.freeze
 
     DEFAULT_QUERY_PARAMS = {
       format: 'plain',
@@ -12,7 +12,7 @@ module RandomOrgHttpApi
       loweralpha: 'on',
       upperalpha: 'on',
       unique: 'on'
-    }
+    }.freeze
 
     QUERY_TEMPLATE = {
       integer: {
@@ -27,6 +27,6 @@ module RandomOrgHttpApi
         path: '/sequences',
         query_keys: [:min, :max, :col, :format, :rnd]
       }
-    }
+    }.freeze
   end
 end

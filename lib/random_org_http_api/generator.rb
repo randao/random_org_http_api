@@ -17,7 +17,7 @@ module RandomOrgHttpApi
     end
 
     def quota
-      params = {path: '/quota', params: {ip: ip, format: 'plain'}}
+      params = { path: '/quota', params: { ip: ip, format: 'plain' } }
       request(params).first.to_i
     end
 
@@ -27,7 +27,7 @@ module RandomOrgHttpApi
 
     private
 
-    def generate(type, params={})
+    def generate(type, params = {})
       params = query(type, params)
       request(params)
     end
@@ -42,7 +42,6 @@ module RandomOrgHttpApi
       uri.query = URI.encode_www_form(params[:query]) if params[:query]
       open(uri).read
     end
-
 
     def query(generator_type, params)
       all_params = DEFAULT_QUERY_PARAMS.merge(params)
