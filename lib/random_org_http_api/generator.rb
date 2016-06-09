@@ -3,7 +3,8 @@ require 'open-uri'
 module RandomOrgHttpApi
   class Generator
     include RandomOrgHttpApi::Configuration
-
+    include RandomOrgHttpApi::Error
+    
     def generate_integers(params)
       generate(:integer, params)
     end
@@ -18,7 +19,7 @@ module RandomOrgHttpApi
 
     def quota
       params = { path: '/quota', params: { ip: ip, format: 'plain' } }
-      request(params).first.to_i
+      api_request(params).first.to_i
     end
 
     def ip
@@ -29,19 +30,31 @@ module RandomOrgHttpApi
 
     def generate(type, params = {})
       params = query(type, params)
-      request(params)
+      api_request(params)
     end
 
     def api_request(hash)
       request(uri: URI(BASE_URI), path: hash[:path], query: hash[:params]).split
     end
 
+
     def request(params)
       uri = URI params[:uri]
       uri.path = params[:path] if params[:path]
       uri.query = URI.encode_www_form(params[:query]) if params[:query]
-      open(uri).read
+
+      exception_cb = Proc.new do |exception|
+        puts exception
+      end
+
+      Retryable.retryable(tries: 3, on: OpenURI::HTTPError, exception_cb: exception_cb) do |retries, exception|
+        if retries > 1
+          raise QuotaError if quota == 0
+        end
+        open(uri).read
+      end
     end
+
 
     def query(generator_type, params)
       all_params = DEFAULT_QUERY_PARAMS.merge(params)
